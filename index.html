@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rashid Qamar | Portfolio</title>
+  <!-- INTER FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- TOP NAV (DYNAMIC) -->
+<div class="top-actions">
+  <button id="btn-portfolio" onclick="showPage('portfolio')">Portfolio</button>
+  <button id="btn-blog" onclick="showPage('blog')">Blog</button>
+  <button id="btn-fav" onclick="showPage('favorites')">Favorites</button>
+</div>
+
+<main class="container">
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio" class="page active">
+
+  <!-- PROFILE -->
+  <div class="header">
+    <img src="profile.jpg" class="profile-pic"/>
+
+    <div class="header-text">
+      <h1>Rashid Qamar</h1>
+      <p class="subtitle">Data Analyst & Data Science Enthusiast</p>
+
+      <!-- SOCIAL LINKS -->
+      <div class="social-links">
+        <a href="https://x.com/RashidQ60876701">Twitter</a>
+        <a href="https://www.linkedin.com/in/rashid-qamar/">LinkedIn</a>
+        <a href="https://github.com/rashid-qamar">GitHub</a>
+        <a href="https://discord.com/channels/@me">Discord</a>
+        <a href="https://t.me/rashid_qamar">Telegram</a>
+        <a href="mailto:rashidqamar841419@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about">
+    <p>
+      I work with data to uncover insights, build dashboards, and create
+      data-driven solutions using analytics and applied data science.
+    </p>
+  </div>
+
+  <!-- PROJECTS -->
+  <h3 class="section-title">Projects</h3>
+
+  <div class="project-card"
+     data-link="https://github.com/yourusername/sales-data-analysis"
+     onclick="openProject(this)">
+
+  <h4>Sales Data Analysis</h4>
+  <p>Analyzed sales data and built interactive Power BI dashboards.</p>
+
+  <a href="https://github.com/yourusername/sales-data-analysis"
+     onclick="event.stopPropagation()">
+    GitHub ↗
+  </a>
+</div>
+
+
+  <div class="project-card"
+     data-link="https://github.com/yourusername/student-performance-analysis"
+     onclick="openProject(this)">
+
+  <h4>Student Performance Analysis</h4>
+  <p>EDA using Python, Pandas, NumPy and Matplotlib.</p>
+
+  <!-- Arrow / link (separate click, no double trigger) -->
+  <a href="https://github.com/yourusername/student-performance-analysis"
+     onclick="event.stopPropagation()">
+    GitHub ↗
+  </a>
+</div>
+
+
+  <!-- SKILLS (PROJECTS KE NICHE) -->
+  <h3 class="section-title">Skills & Technologies I use most</h3>
+
+  <div class="skills">
+    <span>Python</span>
+    <span>Pandas</span>
+    <span>NumPy</span>
+    <span>SQL</span>
+    <span>Power BI</span>
+    <span>Excel</span>
+    <span>Statistics</span>
+    <span>Data Visualization</span>
+    <span>GitHub</span>
+    <span>Machine Learning (Basics)</span>
+  </div>
+
+</section>
+
+<!-- ================= BLOG ================= -->
+<section id="blog" class="page">
+  <h2>Blog</h2>
+  <p class="muted">
+    Short stories, learnings, and thoughts I write along the way.
+  </p>
+
+  <!-- STORY 1 -->
+  <div class="story-card" onclick="openStory(1)">
+    <h4>How I Started Learning Data Analytics</h4>
+    <p>
+      I began with curiosity and confusion. Slowly, datasets started making
+      sense, and patterns began to speak...
+    </p>
+  </div>
+
+  <!-- STORY 2 -->
+  <div class="story-card" onclick="openStory(2)">
+    <h4>Why Consistency Matters More Than Motivation</h4>
+    <p>
+      Motivation fades, but habits stay. Showing up daily—even for 20 minutes...
+    </p>
+  </div>
+</section>
+<!-- FULL STORY MODAL -->
+<div id="storyModal" class="story-modal">
+  <div class="story-modal-content">
+    <span class="close" onclick="closeStory()">×</span>
+    <h3 id="storyTitle"></h3>
+    <p id="storyText"></p>
+  </div>
+</div>
+
+
+
+<!-- ================= FAVORITES ================= -->
+<section id="favorites" class="page">
+  <h2>Favorites</h2>
+  <p class="muted">
+    Stories, connections, and moments that matter.
+  </p>
+
+  <!-- FAVORITE: KADAK CHAI -->
+  <div class="fav-card"
+       data-link="https://www.yebhitheekhai.com/chai-shayari-ek-cup-chai-ho-jaaye/"
+       onclick="openFav(this)">
+    
+    <div class="fav-left">
+      <span class="fav-icon">☕</span>
+    </div>
+
+    <div class="fav-content">
+      <h4>Kadak Chai</h4>
+      <p>Anytime. Must be strong.</p>
+    </div>
+
+    <!-- Arrow link (visual only) -->
+    <a href="https://www.yebhitheekhai.com/chai-shayari-ek-cup-chai-ho-jaaye/"
+       class="fav-link"
+       target="_blank"
+       onclick="event.stopPropagation()">
+      ↗
+    </a>
+  </div>
+
+  <!-- FAVORITE: MOVIE -->
+  <div class="fav-card"
+       data-link="https://en.wikipedia.org/wiki/M.S._Dhoni:_The_Untold_Story"
+       onclick="openFav(this)">
+
+    <div class="fav-left">
+      <span class="fav-icon">🎬</span>
+    </div>
+
+    <div class="fav-content">
+      <h4>M.S. Dhoni – The Untold Story</h4>
+      <p>Watched countless times. Feels deeply connected.</p>
+    </div>
+
+    <a href="https://en.wikipedia.org/wiki/M.S._Dhoni:_The_Untold_Story"
+       class="fav-link"
+       onclick="event.stopPropagation()">
+      ↗
+    </a>
+  </div>
+
+  <!-- FAVORITE: SONG -->
+  <div class="fav-card"
+       data-link="https://www.youtube.com/watch?v=L6z6uRBkOSU"
+       onclick="openFav(this)">
+
+    <div class="fav-left">
+      <span class="fav-icon">🎵</span>
+    </div>
+
+    <div class="fav-content">
+      <h4>Fir Kabhi – M.S. Dhoni</h4>
+      <p>Arijit Singh</p>
+    </div>
+
+    <a href="https://www.youtube.com/watch?v=L6z6uRBkOSU"
+       class="fav-link"
+       target="_blank"
+       onclick="event.stopPropagation()">
+      ↗
+    </a>
+  </div>
+
+  <!-- FAVORITE: SHAYARI -->
+  <div class="fav-card"
+       data-link="https://www.rekhta.org/poets/jaun-eliya/all"
+       onclick="openFav(this)">
+
+    <div class="fav-left">
+      <span class="fav-icon">✒️</span>
+    </div>
+
+    <div class="fav-content">
+      <h4>Shayari</h4>
+      <p class="shayari">Jaun Elia</p>
+    </div>
+
+    <a href="https://www.rekhta.org/poets/jaun-eliya/all"
+       class="fav-link"
+       target="_blank"
+       onclick="event.stopPropagation()">
+      ↗
+    </a>
+  </div>
+
+  <!-- FAVORITE: CHATGPT -->
+  <div class="fav-card"
+       data-link="https://chat.openai.com"
+       onclick="openFav(this)">
+
+    <div class="fav-left">
+      <span class="fav-icon">🤖</span>
+    </div>
+
+    <div class="fav-content">
+      <h4>ChatGPT</h4>
+      <p>Helps me learn faster, solve problems, and turn ideas into reality.</p>
+    </div>
+
+    <a href="https://chat.openai.com"
+       class="fav-link"
+       target="_blank"
+       onclick="event.stopPropagation()">
+      ↗
+    </a>
+  </div>
+
+</section>
+
+
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
