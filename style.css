@@ -1,0 +1,333 @@
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #111827;
+}
+
+/* ===============================
+   TOP NAVIGATION
+================================ */
+.top-actions {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
+}
+
+.top-actions button {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================ */
+.container {
+  max-width: 720px;       /* narrow width (as per design) */
+  margin: auto;
+  padding: 90px 20px;
+}
+
+/* ===============================
+   PAGE SWITCHING
+================================ */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* ===============================
+   HEADER / PROFILE
+================================ */
+.header {
+  display: flex;
+  gap: 24px;
+}
+
+.profile-pic {
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ===============================
+   PRIMARY BUTTONS
+================================ */
+.primary-buttons a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 7px 14px;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: #111827;
+}
+
+/* ===============================
+   SOCIAL LINKS
+================================ */
+.social-links {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.social-links a {
+  border: 1px solid #e5e7eb;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #111827;
+}
+
+/* ===============================
+   ABOUT SECTION
+================================ */
+.about {
+  margin: 30px 0;
+  color: #374151;
+  line-height: 1.7;
+}
+
+/* ===============================
+   SECTION TITLES
+================================ */
+.section-title {
+  margin: 32px 0 14px;
+}
+
+/* ===============================
+   PROJECTS
+================================ */
+.project-card {
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.project-card a {
+  color: #2563eb;
+  text-decoration: none;
+  position: relative;
+}
+
+.project-card p {
+  margin-top: 6px;      /* title aur text ke beech gap */
+  color: #6b7280;       /* light grey (same as fav section) */
+  line-height: 1.6;     /* readability improve */
+  font-size: 14px;
+}
+
+/* Project link underline hover */
+.project-card a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+
+.project-card a:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   SKILLS
+================================ */
+.skills span {
+  display: inline-block;
+  background: #f3f4f6;
+  padding: 7px 12px;
+  border-radius: 16px;
+  margin: 6px 6px 0 0;
+  font-size: 14px;
+}
+
+/* ===============================
+   BLOG SECTION
+================================ */
+.write-box {
+  border: 1px dashed #d1d5db;
+  padding: 16px;
+  border-radius: 14px;
+  margin-top: 20px;
+  background: #fafafa;
+}
+
+.write-box h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.story-card {
+  border: 1px solid #e5e7eb;
+  padding: 18px;
+  border-radius: 14px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.story-card h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.story-card p {
+  color: #374151;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Blog hover effect */
+.story-card:hover {
+  transform: translateY(-3px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.08);
+}
+
+/* ===============================
+   FAVORITES SECTION (FIXED)
+================================ */
+.fav-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 14px;
+  margin-top: 14px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Same hover as blog cards */
+.fav-card:hover {
+  transform: translateY(-3px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.08);
+}
+
+.fav-left {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.fav-content h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.fav-content p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Arrow link (always clickable) */
+.fav-link {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 18px;
+  color: #9ca3af;
+  text-decoration: none;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* ===============================
+   MODAL (BLOG STORY)
+================================ */
+.story-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+.story-modal-content {
+  background: #ffffff;
+  max-width: 650px;
+  margin: 80px auto;
+  padding: 24px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.story-modal-content h3 {
+  margin-bottom: 14px;
+}
+
+.story-modal-content p {
+  line-height: 1.8;
+  color: #374151;
+}
+
+.close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ===============================
+   UTILITY
+================================ */
+.muted {
+  color: #6b7280;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.project-card {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.08);
+}
